@@ -1,6 +1,9 @@
 画面遷移図
 figma:　https://www.figma.com/design/AB5ussnBrWisP6AIQLQa1z/todo_nottodo?node-id=0-1&p=f&t=GKaBVQe3O4LyQ3hf-0
 
+## ER図
+![ER図](https://i.gyazo.com/400393d74e7e82fadbcc1b2d9566c78b.png)
+
 ## サービス概要
 通常のタスク機能に加えてやらないことを明確にすることで生活のQOL向上を目的にしています。
 「何をするか」「何をしないか」を明確にして不要な負担を減らします。
