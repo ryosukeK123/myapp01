@@ -2,7 +2,7 @@
 figma:　https://www.figma.com/design/AB5ussnBrWisP6AIQLQa1z/todo_nottodo?node-id=0-1&p=f&t=GKaBVQe3O4LyQ3hf-0
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/b0bfec7d684ccf2040a0e9ba15e7842a.png)](https://gyazo.com/b0bfec7d684ccf2040a0e9ba15e7842a)
+[![Image from Gyazo](https://i.gyazo.com/1d0660d4843c3458900ce289ce2a87ef.png)](https://gyazo.com/1d0660d4843c3458900ce289ce2a87ef)
 
 ## サービス概要
 通常のタスク機能に加えてやらないことを明確にすることで生活のQOL向上を目的にしています。
