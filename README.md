@@ -1,24 +1,53 @@
-# README
+画面遷移図
+figma:　https://www.figma.com/design/AB5ussnBrWisP6AIQLQa1z/todo_nottodo?node-id=0-1&p=f&t=GKaBVQe3O4LyQ3hf-0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/ad132bac1febd37f6962045f44733cf4.png)](https://gyazo.com/ad132bac1febd37f6962045f44733cf4)
 
-Things you may want to cover:
+## サービス概要
+通常のタスク機能に加えてやらないことを明確にすることで生活のQOL向上を目的にしています。
+「何をするか」「何をしないか」を明確にして不要な負担を減らします。
+毎日を快適に過ごすための手助けをしたいです。
 
-* Ruby version
+## このサービスへの思い・作りたい理由
+物や情報にあふれている日々の中で自分に最適なタスク量を見直すことで、
+ストレスを減らしながら「本当に好きなこと」や「やりたかったこと」を明確にする
+ことができたらいいなと思いました。
 
-* System dependencies
+## ユーザー層について
+老若男女問わず、目標や目的がしっかりとある方。
+またはそんな風になれたらいいなとちょっとでも思う方。
+不要な物や情報にとらわれて理由のない不安から解放されたい方など。
 
-* Configuration
+## サービスの利用イメージ
+通常のTODOリスト機能にプラスして
+「不要な間食をしない」「人の悪口を言わない」「衝動買いしない」など小さな目標を設定して
+記録を付けることで継続のモチベーションもアップします。
 
-* Database creation
+## ユーザーの獲得について
+「ミニマリスト」や「丁寧な暮らし」が好きな層に対してアプローチしたいと考えています。
+Xやインスタグラム等へのシェア機能追加を考えています。
 
-* Database initialization
+## サービスの差別化ポイント・推しポイント
+タスクアプリを使うとやることばかりでストレスがかかります。
+そこでこれはやらない、やりたくないを決めてメリハリをつけることが出来ます。
+また継続日数カウントもあるのでアプリを継続しやすいと思います。
 
-* How to run the test suite
+## 機能候補
+MVPリリース時
+・基本のＴＯＤＯ機能
+・継続日数のカウント機能
+・自己ステータス表示機能(取り組んでいるtodoの継続期間一覧や目標など)
 
-* Services (job queues, cache servers, search engines, etc.)
+本リリース時
+・sns投稿機能
+・継続日数に応じたメッセージ
+・一日の終わりにリマインダーで確認できる機能(チェックリスト型)
+　メール送信⇒リンクからチェックリストへ⇒データを集計して自己ステイタス画面で達成率が見れる
+・継続日数リセット機能
 
-* Deployment instructions
-
-* ...
+## 使用する技術スタック
+- 使用するフレームワーク　Ruby on Rails 
+- データベース PostgreSQL
+- デプロイ先 Render(予定)
+- 使用予定のライブラリ　Devise  Omniauth  oauthlib　aasm　
