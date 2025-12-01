@@ -50,4 +50,4 @@ MVPリリース時
 - 使用するフレームワーク　Ruby on Rails 
 - データベース PostgreSQL
 - デプロイ先 Render(予定)
-- 使用予定のライブラリ　Devise  Omniauth  oauthlib　aasm　
+- 使用予定のライブラリ　Devise  Omniauth  oauthlib　aasm
