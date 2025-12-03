@@ -5,3 +5,4 @@ gem 'bootsnap', require: false
 gem 'puma'
 gem "sprockets-rails"
 gem 'pg'
+gem 'tzinfo-data'
