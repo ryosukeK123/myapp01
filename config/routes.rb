@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get :do_tasks     # やるタスク一覧
       get :dont_tasks   # やらないタスク一覧
+      get :continuous_tasks
     end
   end
 end
