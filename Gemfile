@@ -5,3 +5,7 @@ gem 'bootsnap', require: false
 gem 'puma'
 gem "sprockets-rails"
 gem 'pg'
+gem 'tzinfo-data'
+gem 'slim-rails'
+gem 'bootstrap', '~> 5.3.0'
+gem 'sassc-rails'

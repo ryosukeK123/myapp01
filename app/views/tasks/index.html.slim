@@ -1,0 +1,5 @@
+h1 タスク一覧
+
+ul
+  - @tasks.each do |task|
+    li = "#{task.title} - #{task.status}"
