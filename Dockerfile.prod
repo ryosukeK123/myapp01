@@ -4,7 +4,7 @@ FROM ruby:3.2
 RUN apt-get update -qq && apt-get install -y \
   curl gnupg2 build-essential libpq-dev libyaml-dev nodejs postgresql-client
 
-# Yarnのインストール（apt-keyを使わない方式）
+# Yarnのインストール
 RUN curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update -qq && apt-get install -y yarn
@@ -13,9 +13,15 @@ WORKDIR /myapp
 
 # GemfileとGemfile.lockをコピーしてbundle install
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN bundle install --without development test --path vendor/bundle
 
 # アプリ全体をコピー
 COPY . .
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+# アセットを本番用にプリコンパイル＆古いもの削除
+RUN bundle exec rake assets:precompile
+RUN bundle exec rake assets:clean
+
+# Pumaで起動（Rails本番用）
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+#CMD ["rails", "server", "-b", "0.0.0.0"]
