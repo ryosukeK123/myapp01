@@ -1,0 +1,12 @@
+h1 新しいタスク
+
+= form_with model: @task, local: true do |form|
+  div
+    = form.label :title, "タイトル"
+    = form.text_field :title
+
+  div
+    = form.label :status, "ステータス"
+    = form.select :status, ["やる", "やらない"]
+
+  = form.submit "作成"

@@ -1,0 +1,13 @@
+h1 タスク編集
+
+= form_with model: @task, local: true do |f|
+  .field
+    = f.label :title, 'タイトル'
+    = f.text_field :title
+
+  .field
+    = f.label :status, 'ステータス'
+    = f.select :status, ['やる', 'やらない']
+
+  .actions
+    = f.submit '更新'
