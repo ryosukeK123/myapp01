@@ -1,5 +1,10 @@
 h1 タスク一覧
-
+= link_to "新規タスク作成", new_task_path, class: "btn btn-primary"
 ul
   - @tasks.each do |task|
-    li = "#{task.title} - #{task.status}"
+    li
+      = task.title
+      = task.body
+      = link_to "詳細", task_path(task)
+
+

@@ -6,15 +6,17 @@ h1 タスク登録
     = f.text_field :title
 
   .field
-    = f.label :body, "詳細"
+    = f.label :body, "本文"
     = f.text_area :body
 
   .field
-    = f.label :will_do, "やるタスク？"
-    = f.check_box :will_do
+    = f.radio_button :will_do, true
+    = f.label :will_do_true, "やるタスク"
+    = f.radio_button :will_do, false
+    = f.label :will_do_false, "やらないタスク"
 
   .field
-    = f.label :is_continuous, "継続タスク？"
+    = f.label :is_continuous, "継続タスク"
     = f.check_box :is_continuous
 
   = f.submit "登録"

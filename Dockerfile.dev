@@ -1,7 +1,8 @@
 FROM ruby:3.2
 
+# Rails に必要な最低限のパッケージだけ入れる
 RUN apt-get update -qq && apt-get install -y \
-  curl gnupg2 build-essential libpq-dev libyaml-dev nodejs postgresql-client yarn
+  curl gnupg2 build-essential libpq-dev libyaml-dev postgresql-client
 
 WORKDIR /myapp
 
