@@ -2,12 +2,20 @@ h1 タスク編集
 
 = form_with model: @task, local: true do |f|
   .field
-    = f.label :title, 'タイトル'
+    = f.label :title, "タイトル"
     = f.text_field :title
 
   .field
-    = f.label :status, 'ステータス'
-    = f.select :status, ['やる', 'やらない']
+    = f.label :body, "詳細"
+    = f.text_area :body
+
+  .field
+    = f.label :will_do, "やるタスク？"
+    = f.check_box :will_do
+
+  .field
+    = f.label :is_continuous, "継続タスク？"
+    = f.check_box :is_continuous
 
   .actions
-    = f.submit '更新'
+    = f.submit "更新"

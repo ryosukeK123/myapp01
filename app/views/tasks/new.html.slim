@@ -1,12 +1,22 @@
-h1 新しいタスク
+h1 タスク登録
 
-= form_with model: @task, local: true do |form|
-  div
-    = form.label :title, "タイトル"
-    = form.text_field :title
+= form_with model: @task, local: true do |f|
+  .field
+    = f.label :title, "タイトル"
+    = f.text_field :title
 
-  div
-    = form.label :status, "ステータス"
-    = form.select :status, ["やる", "やらない"]
+  .field
+    = f.label :body, "本文"
+    = f.text_area :body
 
-  = form.submit "作成"
+  .field
+    = f.radio_button :will_do, true
+    = f.label :will_do_true, "やるタスク"
+    = f.radio_button :will_do, false
+    = f.label :will_do_false, "やらないタスク"
+
+  .field
+    = f.label :is_continuous, "継続タスク"
+    = f.check_box :is_continuous
+
+  = f.submit "登録"

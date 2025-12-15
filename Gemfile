@@ -9,3 +9,7 @@ gem 'tzinfo-data'
 gem 'slim-rails'
 gem 'bootstrap', '~> 5.3.0'
 gem 'sassc-rails'
+gem 'bcrypt', '~> 3.1.20'
+gem "importmap-rails"
+gem "turbo-rails"
+gem "stimulus-rails"

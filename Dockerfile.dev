@@ -1,0 +1,15 @@
+FROM ruby:3.2
+
+# Rails に必要な最低限のパッケージだけ入れる
+RUN apt-get update -qq && apt-get install -y \
+  curl gnupg2 build-essential libpq-dev libyaml-dev postgresql-client
+
+WORKDIR /myapp
+
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+COPY . .
+
+# 開発用は rails server を直接起動
+CMD ["rails", "server", "-b", "0.0.0.0"]
