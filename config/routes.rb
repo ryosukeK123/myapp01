@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  root "home#index"   # トップページ
-
-  resources :users, only: [:new, :create, :show]   # ユーザー登録 & マイページ
-  resource  :session, only: [:new, :create, :destroy] # ログイン/ログアウト（単数形が適切）
-
+  root "tasks#index"   # トップページ
+  # Devise のルートを追加
+  devise_for :users, controllers: {
+  sessions: 'users/sessions'
+}
+  # もし独自の users コントローラを残したいならここに追加
+  resources :users, only: [:show]
   resources :tasks do
     collection do
-      get :do_tasks       # やるタスク一覧
-      get :dont_tasks     # やらないタスク一覧
+      get :do_tasks
+      get :dont_tasks
       get :continuous_tasks
     end
   end

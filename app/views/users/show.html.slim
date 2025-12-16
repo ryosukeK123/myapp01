@@ -1,5 +1,9 @@
 h1 マイページ
 p 名前: #{@user.name}
-p メール: #{@user.email}
 
-= link_to "タスク一覧", tasks_path
+h2 継続中のタスク
+ul
+  - @continuous_tasks.each do |task|
+    li
+      = task.title
+      | （継続日数: #{task.continuous_days}日）
