@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!   # ← Deviseの認証を必須にする
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index

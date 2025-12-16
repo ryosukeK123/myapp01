@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  def after_sign_out_path_for(resource_or_scope)
+    new_user_session_path   # ログイン画面に戻す
   end
 end
