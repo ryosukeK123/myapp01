@@ -2,23 +2,19 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    # 全タスク
     @tasks = current_user.tasks
   end
 
   def do_tasks
-    # やるタスク一覧
-    @tasks = current_user.tasks.where(will_do: true)
+    @tasks = current_user.tasks.will_do
   end
 
-  def not_do_tasks
-    # やらないタスク一覧
-    @tasks = current_user.tasks.where(will_do: false)
+  def dont_tasks
+    @tasks = current_user.tasks.not_do
   end
 
   def continuous_tasks
-    # 継続タスク一覧（マイページで表示）
-    @tasks = current_user.tasks.where(is_continuous: true)
+    @tasks = current_user.tasks.continuous
   end
 
   def new
@@ -34,8 +30,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @task.update(task_params)
@@ -47,7 +42,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_path, notice: "タスクを削除しました"
+    redirect_to(params[:return_to] || tasks_path, notice: "タスクを削除しました")
   end
 
   private

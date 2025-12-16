@@ -1,4 +1,9 @@
 h1 継続タスク一覧
+= link_to "新規タスク作成", new_task_path, class: "btn btn-primary"
 ul
   - @tasks.each do |task|
-    li = task.title
+    li 
+      = task.title
+      | （開始日: #{task.created_at.strftime("%Y-%m-%d")} /継続日数: #{task.continuous_days}日）
+      = link_to "詳細", task_path(task), class: "btn btn-info btn-sm"
+      = link_to "削除", task_path(task, return_to: continuous_tasks_path), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm"

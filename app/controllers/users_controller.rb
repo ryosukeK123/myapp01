@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @continuous_tasks = @user.tasks.where(continuous_flag: true)
+    @continuous_tasks = @user.tasks.where(is_continuous: true)
   end
 
   private

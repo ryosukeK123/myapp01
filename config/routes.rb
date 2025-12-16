@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :tasks do
     collection do
-      get :do_tasks       # やるタスク一覧
-      get :dont_tasks     # やらないタスク一覧
+      get :do_tasks
+      get :dont_tasks
       get :continuous_tasks
     end
   end
