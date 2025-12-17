@@ -23,5 +23,5 @@ RUN bundle exec rake assets:precompile
 RUN bundle exec rake assets:clean
 
 # Pumaで起動（Rails本番用）
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD bundle exec rails db:migrate && bundle exec rails s -b 0.0.0.0 -p $PORT
 #CMD ["rails", "server", "-b", "0.0.0.0"]
