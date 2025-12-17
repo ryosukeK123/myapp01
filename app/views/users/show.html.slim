@@ -1,9 +1,20 @@
-h1 マイページ
-p 名前: #{@user.name}
+h1.text-center.mb-4 マイページ
 
-h2 継続中のタスク
-ul
-  - @continuous_tasks.each do |task|
-    li
-      = task.title
-      | （継続日数: #{task.continuous_days}日）
+.card.mb-4
+  .card-body
+    h5.card-title.fs-5 ユーザー情報
+    p.fs-6.mb-0
+      strong 名前:
+      = @user.name
+
+h2.fs-4.mb-3 継続中のタスク
+
+- if @continuous_tasks.any?
+  .list-group
+    - @continuous_tasks.each do |task|
+      .list-group-item
+        h6.mb-1 = task.title
+        p.mb-1.text-muted = task.body
+        small.text-secondary （継続日数: #{task.continuous_days}日）
+- else
+  p.text-muted.fs-6 まだ継続中のタスクはありません
