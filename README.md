@@ -47,7 +47,9 @@ MVPリリース時
 ・継続日数リセット機能
 
 ## 使用する技術スタック
-- 使用するフレームワーク　Ruby on Rails 
+- 使用するフレームワーク　Ruby on Rails 7.1
 - データベース PostgreSQL
-- デプロイ先 Render(予定)
-- 使用予定のライブラリ　Devise  Omniauth  oauthlib　aasm
+- デプロイ先 Render
+- 使用ライブラリ　Devise Puma bcrypt
+
+ 
