@@ -8,8 +8,13 @@ development:
   database: myapp_development
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: myapp_test
+  pool: 5
+  username: postgres
+  password: password
+  host: db
 
 production:
   <<: *default
