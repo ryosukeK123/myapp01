@@ -14,3 +14,9 @@ gem 'importmap-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
 gem 'devise'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+end

@@ -22,6 +22,8 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new
   end
 
+  def edit; end
+
   def create
     @task = current_user.tasks.new(task_params)
     if @task.save
@@ -30,8 +32,6 @@ class TasksController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @task.update(task_params)
